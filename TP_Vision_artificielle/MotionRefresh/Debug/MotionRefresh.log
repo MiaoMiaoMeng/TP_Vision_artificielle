@@ -1,0 +1,5 @@
+﻿  EdLibMotionRefresh.c
+c:\users\14745\tp_vision_artificielle\edcodefournit\edlibmotionrefresh.c(83): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+c:\users\14745\tp_vision_artificielle\edcodefournit\edlibmotionrefresh.c(84): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+c:\users\14745\tp_vision_artificielle\edcodefournit\edlibmotionrefresh.c(85): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+  MotionRefresh.vcxproj -> C:\Users\14745\TP_Vision_artificielle\TP_Vision_artificielle\Debug\MotionRefresh.exe

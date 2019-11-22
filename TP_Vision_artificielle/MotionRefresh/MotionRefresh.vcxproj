@@ -18,11 +18,22 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\EdCodeFournit\EdLibMedianFiltering.h" />
+    <ClInclude Include="..\..\EdCodeFournit\EdLibMotionFirstIm.h" />
+    <ClInclude Include="..\..\EdCodeFournit\EdStructures.h" />
+    <ClInclude Include="..\..\EdCodeFournit\EdUtilities.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\EdCodeFournit\EdLibMotionRefresh.c" />
+    <ClCompile Include="..\..\EdCodeFournit\EdMotionRefresh.c" />
+    <ClCompile Include="..\..\EdCodeFournit\EdUtilities.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{45CD7D46-4BFB-46A4-9D24-11A08AE4EA5F}</ProjectGuid>
+    <ProjectGuid>{6CCD447E-CFF0-4C2B-8E1E-1ECDC7AE312F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>seuillagehat</RootNamespace>
+    <RootNamespace>MotionRefresh</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

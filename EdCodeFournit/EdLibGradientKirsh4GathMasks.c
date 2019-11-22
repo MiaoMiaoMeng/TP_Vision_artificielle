@@ -195,25 +195,25 @@ int GradientKirsh4GathMask(EdIMAGE *image, EdIMAGE *imnorm, EdIMAGE *imarg)
     grad_i = ((grad_i >= 0) ? grad_i : - grad_i);   /* absolute value */
     grad_i /=3;                                     /* Normalization */
 
-    PIXEL(imnorm, point) = (unsigned char)grad_x;
-    PIXEL(imarg, point) = 0;
+	PIXEL_R(imnorm, point) = (unsigned char)grad_x;
+	PIXEL_R(imarg, point) = 0;
 
-    if (grad_d > PIXEL(imnorm, point))
+    if (grad_d > PIXEL_R(imnorm, point))
     {
-      PIXEL(imnorm, point) = (unsigned char)grad_d;
-      PIXEL(imarg, point) = 1;
+      PIXEL_R(imnorm, point) = (unsigned char)grad_d;
+	  PIXEL_R(imarg, point) = 1;
     }
 
-    if (grad_y > PIXEL(imnorm, point))
+    if (grad_y > PIXEL_R(imnorm, point))
     {
-      PIXEL(imnorm, point) = (unsigned char)grad_y;
-      PIXEL(imarg, point) = 6;
+		PIXEL_R(imnorm, point) = (unsigned char)grad_y;
+		PIXEL_R(imarg, point) = 6;
     }
 
-    if (grad_i > PIXEL(imnorm, point))
+    if (grad_i > PIXEL_R(imnorm, point))
     {
-      PIXEL(imnorm, point) = (unsigned char)grad_i;
-      PIXEL(imarg, point) = 7;
+		PIXEL_R(imnorm, point) = (unsigned char)grad_i;
+		PIXEL_R(imarg, point) = 7;
     }
 	//=================================================================================
 	grad_x = 0;	/* initialisation */
@@ -279,25 +279,25 @@ int GradientKirsh4GathMask(EdIMAGE *image, EdIMAGE *imnorm, EdIMAGE *imarg)
 	grad_i = ((grad_i >= 0) ? grad_i : -grad_i);   /* absolute value */
 	grad_i /= 3;                                     /* Normalization */
 
-	PIXEL(imnorm, point) = (unsigned char)grad_x;
-	PIXEL(imarg, point) = 0;
+	PIXEL_V(imnorm, point) = (unsigned char)grad_x;
+	PIXEL_V(imarg, point) = 0;
 
-	if (grad_d > PIXEL(imnorm, point))
+	if (grad_d > PIXEL_V(imnorm, point))
 	{
-		PIXEL(imnorm, point) = (unsigned char)grad_d;
-		PIXEL(imarg, point) = 1;
+		PIXEL_V(imnorm, point) = (unsigned char)grad_d;
+		PIXEL_V(imarg, point) = 1;
 	}
 
-	if (grad_y > PIXEL(imnorm, point))
+	if (grad_y > PIXEL_V(imnorm, point))
 	{
-		PIXEL(imnorm, point) = (unsigned char)grad_y;
-		PIXEL(imarg, point) = 6;
+		PIXEL_V(imnorm, point) = (unsigned char)grad_y;
+		PIXEL_V(imarg, point) = 6;
 	}
 
 	if (grad_i > PIXEL(imnorm, point))
 	{
-		PIXEL(imnorm, point) = (unsigned char)grad_i;
-		PIXEL(imarg, point) = 7;
+		PIXEL_V(imnorm, point) = (unsigned char)grad_i;
+		PIXEL_V(imarg, point) = 7;
 	}
 	//=================================================================================
 	grad_x = 0;	/* initialisation */
@@ -363,25 +363,25 @@ int GradientKirsh4GathMask(EdIMAGE *image, EdIMAGE *imnorm, EdIMAGE *imarg)
 	grad_i = ((grad_i >= 0) ? grad_i : -grad_i);   /* absolute value */
 	grad_i /= 3;                                     /* Normalization */
 
-	PIXEL(imnorm, point) = (unsigned char)grad_x;
-	PIXEL(imarg, point) = 0;
+	PIXEL_B(imnorm, point) = (unsigned char)grad_x;
+	PIXEL_B(imarg, point) = 0;
 
-	if (grad_d > PIXEL(imnorm, point))
+	if (grad_d > PIXEL_B(imnorm, point))
 	{
-		PIXEL(imnorm, point) = (unsigned char)grad_d;
-		PIXEL(imarg, point) = 1;
+		PIXEL_B(imnorm, point) = (unsigned char)grad_d;
+		PIXEL_B(imarg, point) = 1;
 	}
 
-	if (grad_y > PIXEL(imnorm, point))
+	if (grad_y > PIXEL_B(imnorm, point))
 	{
-		PIXEL(imnorm, point) = (unsigned char)grad_y;
-		PIXEL(imarg, point) = 6;
+		PIXEL_B(imnorm, point) = (unsigned char)grad_y;
+		PIXEL_B(imarg, point) = 6;
 	}
 
-	if (grad_i > PIXEL(imnorm, point))
+	if (grad_i > PIXEL_B(imnorm, point))
 	{
-		PIXEL(imnorm, point) = (unsigned char)grad_i;
-		PIXEL(imarg, point) = 7;
+		PIXEL_B(imnorm, point) = (unsigned char)grad_i;
+		PIXEL_B(imarg, point) = 7;
 	}
 	//=================================================================================
   }/* --- fin du balayage de l'image --- */

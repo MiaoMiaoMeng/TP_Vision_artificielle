@@ -1,2 +1,7 @@
 ﻿  EdGradientKirsh4GathMasks.c
-  TP_Vision_artificielle.vcxproj -> C:\Users\Administrator\TP_Vision_artificielle\TP_Vision_artificielle\Debug\Kirsh4GathMaskBWRGB.exe
+  EdLibGradientKirsh4GathMasks.c
+c:\users\14745\tp_vision_artificielle\edcodefournit\edlibgradientkirsh4gathmasks.c(64): warning C4101: “j”: 未引用的局部变量
+c:\users\14745\tp_vision_artificielle\edcodefournit\edlibgradientkirsh4gathmasks.c(64): warning C4101: “i”: 未引用的局部变量
+c:\users\14745\tp_vision_artificielle\edcodefournit\edlibgradientkirsh4gathmasks.c(68): warning C4101: “pixel”: 未引用的局部变量
+  正在生成代码...
+  TP_Vision_artificielle.vcxproj -> C:\Users\14745\TP_Vision_artificielle\TP_Vision_artificielle\Debug\Kirsh4GathMaskBWRGB.exe

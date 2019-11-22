@@ -86,12 +86,12 @@ int main(int argc, char **argv)
     exit(0);
   }
   fprintf(stderr, "Size of the Image : %d lines x %d colums : Type : %d\n", nlig,ncol, (int)prof);
-  /*if (prof != 1)
+  if (prof != 3)
   {
-    fprintf(stderr," the source image is not a B&W image \n");
+    fprintf(stderr," the source image is not a RGB image \n");
     system ("PAUSE"); // Windows Only
     exit(0);
-  }*/
+  }
   /* --- Creation of Images Header and Data --- */
   if (crea_IMAGE(image) == NULL)	/* creation of Image Header  */
   {

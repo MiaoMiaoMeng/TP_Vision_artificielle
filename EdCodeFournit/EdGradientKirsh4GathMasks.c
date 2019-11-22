@@ -86,12 +86,12 @@ int main(int argc, char **argv)
     exit(0);
   }
   fprintf(stderr, "Size of the Image : %d lines x %d colums : Type : %d\n", nlig,ncol, (int)prof);
-  if (prof != 1)
+  /*if (prof != 1)
   {
     fprintf(stderr," the source image is not a B&W image \n");
     system ("PAUSE"); // Windows Only
     exit(0);
-  }
+  }*/
   /* --- Creation of Images Header and Data --- */
   if (crea_IMAGE(image) == NULL)	/* creation of Image Header  */
   {
@@ -164,7 +164,7 @@ int main(int argc, char **argv)
     exit(0);
   }
 
-  fprintf(ficharg,"P5\n#creating by EdEnviTI\n%d %d\n255\n",(int)ncol, (int)nlig); // Header
+  fprintf(ficharg,"P6\n#creating by EdEnviTI\n%d %d\n255\n",(int)ncol, (int)nlig); // Header
   ret = Writing_ImageData(ficharg, imarg); // Image Pixel Data
   if (!ret)
   {

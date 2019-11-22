@@ -131,7 +131,7 @@ int GradientKirsh4GathMask(EdIMAGE *image, EdIMAGE *imnorm, EdIMAGE *imarg)
 //			         1/3 | -1	0  1 |
 //				         |  0   1  1 |
 */
-
+//=================================================================================
     grad_x = 0;	/* initialisation */
     grad_y = 0;
     grad_d = 0;
@@ -140,48 +140,48 @@ int GradientKirsh4GathMask(EdIMAGE *image, EdIMAGE *imnorm, EdIMAGE *imarg)
     POINT_X(pointv) = POINT_X(point) - 1;
     POINT_Y(pointv) = POINT_Y(point) - 1;
 
-    grad_x -= (int)PIXEL(image, pointv);  /* M(0,0) = -1 */
-    grad_y -= (int)PIXEL(image, pointv);
-    grad_i -= (int)PIXEL(image, pointv);
+    grad_x -= (int)PIXEL_R(image, pointv);  /* M(0,0) = -1 */
+    grad_y -= (int)PIXEL_R(image, pointv);
+    grad_i -= (int)PIXEL_R(image, pointv);
 
     POINT_Y(pointv) = POINT_Y(point);
 
-    grad_x -= (int)PIXEL(image, pointv);  /* M(0,1) = -1 */
-    grad_d -= (int)PIXEL(image, pointv);
-    grad_i -= (int)PIXEL(image, pointv);
+    grad_x -= (int)PIXEL_R(image, pointv);  /* M(0,1) = -1 */
+    grad_d -= (int)PIXEL_R(image, pointv);
+    grad_i -= (int)PIXEL_R(image, pointv);
 
 
     POINT_Y(pointv) = POINT_Y(point) + 1;
-    grad_x -= (int)PIXEL(image, pointv);  /* M(0,2) = -1 */
-    grad_d -= (int)PIXEL(image, pointv);
-    grad_y += (int)PIXEL(image, pointv);
+    grad_x -= (int)PIXEL_R(image, pointv);  /* M(0,2) = -1 */
+    grad_d -= (int)PIXEL_R(image, pointv);
+    grad_y += (int)PIXEL_R(image, pointv);
 
     POINT_X(pointv) = POINT_X(point) + 1;
     POINT_Y(pointv) = POINT_Y(point) - 1;
-    grad_x += (int)PIXEL(image, pointv);  /* M(2,0) = 1 */
-    grad_d += (int)PIXEL(image, pointv);
-    grad_y -= (int)PIXEL(image, pointv);
+    grad_x += (int)PIXEL_R(image, pointv);  /* M(2,0) = 1 */
+    grad_d += (int)PIXEL_R(image, pointv);
+    grad_y -= (int)PIXEL_R(image, pointv);
 
     POINT_Y(pointv) = POINT_Y(point);
-    grad_x += (int)PIXEL(image, pointv);  /* M(2,1)= 1 */
-    grad_d += (int)PIXEL(image, pointv);
-    grad_i += (int)PIXEL(image, pointv);
+    grad_x += (int)PIXEL_R(image, pointv);  /* M(2,1)= 1 */
+    grad_d += (int)PIXEL_R(image, pointv);
+    grad_i += (int)PIXEL_R(image, pointv);
 
     POINT_Y(pointv) = POINT_Y(point) + 1;
-    grad_x += (int)PIXEL(image, pointv);  /* M(2,2) = 1 */
-    grad_y += (int)PIXEL(image, pointv);
-    grad_i += (int)PIXEL(image, pointv);
+    grad_x += (int)PIXEL_R(image, pointv);  /* M(2,2) = 1 */
+    grad_y += (int)PIXEL_R(image, pointv);
+    grad_i += (int)PIXEL_R(image, pointv);
 
     POINT_X(pointv) = POINT_X(point);
     POINT_Y(pointv) = POINT_Y(point) - 1;
-    grad_d += (int)PIXEL(image, pointv);  /* M(1,0) = 1 */
-    grad_y -= (int)PIXEL(image, pointv);
-    grad_i -= (int)PIXEL(image, pointv);
+    grad_d += (int)PIXEL_R(image, pointv);  /* M(1,0) = 1 */
+    grad_y -= (int)PIXEL_R(image, pointv);
+    grad_i -= (int)PIXEL_R(image, pointv);
 
     POINT_Y(pointv) = POINT_Y(point) + 1;
-    grad_d -= (int)PIXEL(image, pointv);  /* M(1,2) = - 1 */
-    grad_y += (int)PIXEL(image, pointv);
-    grad_i += (int)PIXEL(image, pointv);
+    grad_d -= (int)PIXEL_R(image, pointv);  /* M(1,2) = - 1 */
+    grad_y += (int)PIXEL_R(image, pointv);
+    grad_i += (int)PIXEL_R(image, pointv);
 
     grad_x = ((grad_x >= 0) ? grad_x : - grad_x);   /* absolute value */
     grad_x /=3;                                     /* Normalization */
@@ -215,6 +215,175 @@ int GradientKirsh4GathMask(EdIMAGE *image, EdIMAGE *imnorm, EdIMAGE *imarg)
       PIXEL(imnorm, point) = (unsigned char)grad_i;
       PIXEL(imarg, point) = 7;
     }
+	//=================================================================================
+	grad_x = 0;	/* initialisation */
+	grad_y = 0;
+	grad_d = 0;
+	grad_i = 0;
+
+	POINT_X(pointv) = POINT_X(point) - 1;
+	POINT_Y(pointv) = POINT_Y(point) - 1;
+
+	grad_x -= (int)PIXEL_V(image, pointv);  /* M(0,0) = -1 */
+	grad_y -= (int)PIXEL_V(image, pointv);
+	grad_i -= (int)PIXEL_V(image, pointv);
+
+	POINT_Y(pointv) = POINT_Y(point);
+
+	grad_x -= (int)PIXEL_V(image, pointv);  /* M(0,1) = -1 */
+	grad_d -= (int)PIXEL_V(image, pointv);
+	grad_i -= (int)PIXEL_V(image, pointv);
+
+
+	POINT_Y(pointv) = POINT_Y(point) + 1;
+	grad_x -= (int)PIXEL_V(image, pointv);  /* M(0,2) = -1 */
+	grad_d -= (int)PIXEL_V(image, pointv);
+	grad_y += (int)PIXEL_V(image, pointv);
+
+	POINT_X(pointv) = POINT_X(point) + 1;
+	POINT_Y(pointv) = POINT_Y(point) - 1;
+	grad_x += (int)PIXEL_V(image, pointv);  /* M(2,0) = 1 */
+	grad_d += (int)PIXEL_V(image, pointv);
+	grad_y -= (int)PIXEL_V(image, pointv);
+
+	POINT_Y(pointv) = POINT_Y(point);
+	grad_x += (int)PIXEL_V(image, pointv);  /* M(2,1)= 1 */
+	grad_d += (int)PIXEL_V(image, pointv);
+	grad_i += (int)PIXEL_V(image, pointv);
+
+	POINT_Y(pointv) = POINT_Y(point) + 1;
+	grad_x += (int)PIXEL_V(image, pointv);  /* M(2,2) = 1 */
+	grad_y += (int)PIXEL_V(image, pointv);
+	grad_i += (int)PIXEL_V(image, pointv);
+
+	POINT_X(pointv) = POINT_X(point);
+	POINT_Y(pointv) = POINT_Y(point) - 1;
+	grad_d += (int)PIXEL_V(image, pointv);  /* M(1,0) = 1 */
+	grad_y -= (int)PIXEL_V(image, pointv);
+	grad_i -= (int)PIXEL_V(image, pointv);
+
+	POINT_Y(pointv) = POINT_Y(point) + 1;
+	grad_d -= (int)PIXEL_V(image, pointv);  /* M(1,2) = - 1 */
+	grad_y += (int)PIXEL_V(image, pointv);
+	grad_i += (int)PIXEL_V(image, pointv);
+
+	grad_x = ((grad_x >= 0) ? grad_x : -grad_x);   /* absolute value */
+	grad_x /= 3;                                     /* Normalization */
+
+	grad_d = ((grad_d >= 0) ? grad_d : -grad_d);   /* absolute value */
+	grad_d /= 3;                                     /* Normalization */
+
+	grad_y = ((grad_y >= 0) ? grad_y : -grad_y);   /* absolute value */
+	grad_y /= 3;                                     /* Normalization */
+
+	grad_i = ((grad_i >= 0) ? grad_i : -grad_i);   /* absolute value */
+	grad_i /= 3;                                     /* Normalization */
+
+	PIXEL(imnorm, point) = (unsigned char)grad_x;
+	PIXEL(imarg, point) = 0;
+
+	if (grad_d > PIXEL(imnorm, point))
+	{
+		PIXEL(imnorm, point) = (unsigned char)grad_d;
+		PIXEL(imarg, point) = 1;
+	}
+
+	if (grad_y > PIXEL(imnorm, point))
+	{
+		PIXEL(imnorm, point) = (unsigned char)grad_y;
+		PIXEL(imarg, point) = 6;
+	}
+
+	if (grad_i > PIXEL(imnorm, point))
+	{
+		PIXEL(imnorm, point) = (unsigned char)grad_i;
+		PIXEL(imarg, point) = 7;
+	}
+	//=================================================================================
+	grad_x = 0;	/* initialisation */
+	grad_y = 0;
+	grad_d = 0;
+	grad_i = 0;
+
+	POINT_X(pointv) = POINT_X(point) - 1;
+	POINT_Y(pointv) = POINT_Y(point) - 1;
+
+	grad_x -= (int)PIXEL_B(image, pointv);  /* M(0,0) = -1 */
+	grad_y -= (int)PIXEL_B(image, pointv);
+	grad_i -= (int)PIXEL_B(image, pointv);
+
+	POINT_Y(pointv) = POINT_Y(point);
+
+	grad_x -= (int)PIXEL_B(image, pointv);  /* M(0,1) = -1 */
+	grad_d -= (int)PIXEL_B(image, pointv);
+	grad_i -= (int)PIXEL_B(image, pointv);
+
+
+	POINT_Y(pointv) = POINT_Y(point) + 1;
+	grad_x -= (int)PIXEL_B(image, pointv);  /* M(0,2) = -1 */
+	grad_d -= (int)PIXEL_B(image, pointv);
+	grad_y += (int)PIXEL_B(image, pointv);
+
+	POINT_X(pointv) = POINT_X(point) + 1;
+	POINT_Y(pointv) = POINT_Y(point) - 1;
+	grad_x += (int)PIXEL_B(image, pointv);  /* M(2,0) = 1 */
+	grad_d += (int)PIXEL_B(image, pointv);
+	grad_y -= (int)PIXEL_B(image, pointv);
+
+	POINT_Y(pointv) = POINT_Y(point);
+	grad_x += (int)PIXEL_B(image, pointv);  /* M(2,1)= 1 */
+	grad_d += (int)PIXEL_B(image, pointv);
+	grad_i += (int)PIXEL_B(image, pointv);
+
+	POINT_Y(pointv) = POINT_Y(point) + 1;
+	grad_x += (int)PIXEL_B(image, pointv);  /* M(2,2) = 1 */
+	grad_y += (int)PIXEL_B(image, pointv);
+	grad_i += (int)PIXEL_B(image, pointv);
+
+	POINT_X(pointv) = POINT_X(point);
+	POINT_Y(pointv) = POINT_Y(point) - 1;
+	grad_d += (int)PIXEL_B(image, pointv);  /* M(1,0) = 1 */
+	grad_y -= (int)PIXEL_B(image, pointv);
+	grad_i -= (int)PIXEL_B(image, pointv);
+
+	POINT_Y(pointv) = POINT_Y(point) + 1;
+	grad_d -= (int)PIXEL_B(image, pointv);  /* M(1,2) = - 1 */
+	grad_y += (int)PIXEL_B(image, pointv);
+	grad_i += (int)PIXEL_B(image, pointv);
+
+	grad_x = ((grad_x >= 0) ? grad_x : -grad_x);   /* absolute value */
+	grad_x /= 3;                                     /* Normalization */
+
+	grad_d = ((grad_d >= 0) ? grad_d : -grad_d);   /* absolute value */
+	grad_d /= 3;                                     /* Normalization */
+
+	grad_y = ((grad_y >= 0) ? grad_y : -grad_y);   /* absolute value */
+	grad_y /= 3;                                     /* Normalization */
+
+	grad_i = ((grad_i >= 0) ? grad_i : -grad_i);   /* absolute value */
+	grad_i /= 3;                                     /* Normalization */
+
+	PIXEL(imnorm, point) = (unsigned char)grad_x;
+	PIXEL(imarg, point) = 0;
+
+	if (grad_d > PIXEL(imnorm, point))
+	{
+		PIXEL(imnorm, point) = (unsigned char)grad_d;
+		PIXEL(imarg, point) = 1;
+	}
+
+	if (grad_y > PIXEL(imnorm, point))
+	{
+		PIXEL(imnorm, point) = (unsigned char)grad_y;
+		PIXEL(imarg, point) = 6;
+	}
+
+	if (grad_i > PIXEL(imnorm, point))
+	{
+		PIXEL(imnorm, point) = (unsigned char)grad_i;
+		PIXEL(imarg, point) = 7;
+	}
+	//=================================================================================
   }/* --- fin du balayage de l'image --- */
 
   free((void *)pointv); 	/* free of point data structure  */

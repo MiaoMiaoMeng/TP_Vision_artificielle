@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kirsh4GathMaskBWRGB", "TP_V
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeanFillteringBWRGB", "MeanFillteringBWRGB\MeanFillteringBWRGB.vcxproj", "{5A6C90E7-F9BC-4C30-A564-FCB0936910D1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MotionFirstlm", "MotionFirstlm\MotionFirstlm.vcxproj", "{D4A36735-E433-4946-8C5A-6E658D0F37B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{5A6C90E7-F9BC-4C30-A564-FCB0936910D1}.Release|x64.Build.0 = Release|x64
 		{5A6C90E7-F9BC-4C30-A564-FCB0936910D1}.Release|x86.ActiveCfg = Release|Win32
 		{5A6C90E7-F9BC-4C30-A564-FCB0936910D1}.Release|x86.Build.0 = Release|Win32
+		{D4A36735-E433-4946-8C5A-6E658D0F37B5}.Debug|x64.ActiveCfg = Debug|x64
+		{D4A36735-E433-4946-8C5A-6E658D0F37B5}.Debug|x64.Build.0 = Debug|x64
+		{D4A36735-E433-4946-8C5A-6E658D0F37B5}.Debug|x86.ActiveCfg = Debug|Win32
+		{D4A36735-E433-4946-8C5A-6E658D0F37B5}.Debug|x86.Build.0 = Debug|Win32
+		{D4A36735-E433-4946-8C5A-6E658D0F37B5}.Release|x64.ActiveCfg = Release|x64
+		{D4A36735-E433-4946-8C5A-6E658D0F37B5}.Release|x64.Build.0 = Release|x64
+		{D4A36735-E433-4946-8C5A-6E658D0F37B5}.Release|x86.ActiveCfg = Release|Win32
+		{D4A36735-E433-4946-8C5A-6E658D0F37B5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
